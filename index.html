@@ -2,13 +2,21 @@
 <html>
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="bower_components/highcharts-chart/highcharts-chart.html">
     <link rel="import" href="bower_components/highcharts-chart/highcharts-map.html">
     <link rel="import" href="bower_components/highcharts-chart/highcharts-stock.html">
     <link rel="import" href="bower_components/vaadin-split-layout/vaadin-split-layout.html">
     <link rel="import" href="elements/hello-world.html">
-    <title>icon-toggle</title>
+    <title>Power Data</title>
+    <style>
+      header{
+        padding: 1em;
+        color: white;
+        background-color: #7cb5ec;
+        clear: left;
+        text-align: center;
+      }
+      </style>
   </head>
   <body>
     <!--
@@ -16,11 +24,12 @@
         This page will automatically redirect you there when run in the browser
         with `polymer serve --open`.
       -->
+      <header> <h1>Power Chart</h1> </header>
       <vaadin-split-layout>
-        <div style="min-height: 500px;">first content</div>
+        <div style="min-height: 500px;min-width:300px">first content</div>
         <vaadin-split-layout vertical>
           <iron-fit-impl vertical-align="top" horizontal-align="center">
-            <highcharts-chart type="pie" data='[[25],[15],[50],[10]]'></highcharts-chart>
+            <highcharts-chart type="donut" title="Power Distribution" data='[[25],[15],[50],[10]]'></highcharts-chart>
           </iron-fit-impl>
           <div style="min-width: 300px;min-height:500px">second content</div>
         </vaadin-split-layout>
