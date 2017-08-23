@@ -57,4 +57,5 @@ The mixin stylesheet includes custom CSS mixins that can be applied inside a CSS
 A complete [guide](https://elements.polymer-project.org/guides/flex-layout) to `<iron-flex-layout>` is available.
 
 ## Changes in 2.0
-- removed the deprecated `/deep/` classes -- files removed: `classes/iron-flex-layout.html`, `classes/iron-shadow-flex-layout`
+- removed the deprecated `/deep/` classes -- files removed: `classes/iron-flex-layout.html`, `classes/iron-shadow-flex-layout` 
+
