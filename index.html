@@ -26,12 +26,12 @@
         with `polymer serve --open`.
       -->
       <header> <h1>Power Chart</h1> </header>
-      <button type="button" onclick="changeData()">Test Button</button>
+      <button type="button" onclick="loadData()">Test Button</button>
       <vaadin-split-layout>
         <div style="min-height: 500px;min-width:300px">first content</div>
         <vaadin-split-layout vertical>
           <iron-fit-impl vertical-align="top" horizontal-align="center">
-            <highcharts-chart id="pieChart" type="pie" title="Power Distribution" data='[[25],[15],[50],[10]]'></highcharts-chart>
+            <highcharts-chart id="pieChart" type="pie" title="Power Distribution" data='[["G",25],["B",15],["C",50],["D",10]]'></highcharts-chart>
           </iron-fit-impl>
           <div style="min-width: 300px;min-height:500px">second content</div>
         </vaadin-split-layout>
