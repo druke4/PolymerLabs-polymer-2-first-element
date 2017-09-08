@@ -2,10 +2,7 @@
 <html>
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="graph-scripts/graph-support.js"></script>
-    <link rel="import" href="bower_components/highcharts-chart/highcharts-chart.html">
-    <link rel="import" href="bower_components/highcharts-chart/highcharts-map.html">
-    <link rel="import" href="bower_components/highcharts-chart/highcharts-stock.html">
+    <script src="bower_components/highcharts/highcharts.js"></script>
     <link rel="import" href="bower_components/vaadin-split-layout/vaadin-split-layout.html">
     <link rel="import" href="elements/hello-world.html">
     <title>Power Data</title>
@@ -30,12 +27,10 @@
       <vaadin-split-layout>
         <div style="min-height: 500px;min-width:300px">first content</div>
         <vaadin-split-layout vertical>
-          <iron-fit-impl vertical-align="top" horizontal-align="center">
-            <highcharts-chart id="pieChart" type="pie" title="Power Distribution" data='[["G",25],["B",15],["C",50],["D",10]]'></highcharts-chart>
-          </iron-fit-impl>
+          <div id="container"></div>
           <div style="min-width: 300px;min-height:500px">second content</div>
         </vaadin-split-layout>
       </vaadin-split-layout>
-
   </body>
+<script src="graph-scripts/graph-support.js"></script>
 </html>

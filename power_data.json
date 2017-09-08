@@ -1,0 +1,21 @@
+{
+  "Power_Source":
+  [
+    {
+      "Title":"Accelerometer",
+      "Power":15
+    },
+    {
+      "Title":"Display",
+      "Power":5
+    },
+    {
+      "Title":"Micro",
+      "Power":20
+    },
+    {
+      "Title":"GPS",
+      "Power":45
+    }
+  ]
+}
