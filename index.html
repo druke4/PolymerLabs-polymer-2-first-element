@@ -28,9 +28,31 @@
         <div style="min-height: 500px;min-width:300px">first content</div>
         <vaadin-split-layout vertical>
           <div id="container"></div>
-          <div style="min-width: 300px;min-height:500px">second content</div>
+          <div id="form_container" style="min-width: 300px;min-height:400px">
+            <form action="#" onsubmit="return validateFormOnSubmit(this);" method="post">
+              Data Rate:
+              <select name="DataRate">
+                <option value="xxxx">1</option>
+                <option value="yyyy">2</option>
+              </select>
+              Range:
+              <select class="" name="Range">
+                <option value="xxx">1</option>
+                <option value="yyy">2</option>
+              </select>
+              Resolution:
+              <select class="" name="Resolution">
+                <option value="xxx">1</option>
+                <option value="yyy">2</option>
+              </select>
+              <input type="number" id="sources" name="Sources" value="4" max="8" min="1" onkeydown="addFields()" onclick="addFields()"> Sources:
+              <div id="sourceContainer"></div>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
         </vaadin-split-layout>
       </vaadin-split-layout>
   </body>
 <script src="graph-scripts/graph-support.js"></script>
+<script src="form-scripts/form_scripts.js" charset="utf-8"></script>
 </html>
