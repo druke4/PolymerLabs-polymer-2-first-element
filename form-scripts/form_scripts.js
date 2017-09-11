@@ -9,7 +9,7 @@ function addFields(){
     }
     for (i=0;i<number;i++){
         // Append a node with a random text
-        container.appendChild(document.createTextNode("Source " + (i+1)));
+        container.appendChild(document.createTextNode("Source " + (i+1) + ": "));
         // Create an <input> element, set its type and name attributes
         var input = document.createElement("input");
         input.type = "text";
@@ -28,13 +28,13 @@ function validateFormOnSubmit(theForm) {
         alert("Some fields need correction:\n" + reason);
     } else {
         var mySettingsObj = {
-          "DataRate":document.getElementsByName('DataRate').value;,
-          "Range":document.getElementsByName('Range').value;,
-          "Resolution":document.getElementsByName('Resolution').value;,
-          "Sources":document.getElementsByName('Sources').value;,
-          for(i=0;i<document.getElementsByName('Sources').value;i++){
-            "Source"+ i : document.getElementsByName("member" + i).value;,
-          }
+          "DataRate":document.getElementsByName('DataRate').value,
+          "Range":document.getElementsByName('Range').value,
+          "Resolution":document.getElementsByName('Resolution').value,
+          "Sources":document.getElementsByName('Sources').value,
+        }
+        for(i=0;i<document.getElementsByName('Sources').value;i++){
+          mySettingsObj.put("Source"+ i, document.getElementsByName("member" + i).value);
         }
         var mySettingsObjString = JSON.stringify(mySettingsObj);
         simpleCart.checkout();
