@@ -23,6 +23,13 @@ function addFields()
         input.type = "text";
         input.name = "member" + i;
         container.appendChild(input);
+
+        var button = document.createElement("button");
+        button.type = "button"+ i;
+        button.class = "icon-button";
+        button.innerHTML = '<paper-icon-button icon="star"></paper-icon-button>';
+
+        container.appendChild(button);
         // Append a line break
         container.appendChild(document.createElement("br"));
     }
