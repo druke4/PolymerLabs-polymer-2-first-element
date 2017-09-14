@@ -8,12 +8,6 @@ function addFields()
     while (container.hasChildNodes()) {
         container.removeChild(container.lastChild);
     }
-    // read key in case back space was used
-    var key = event.keyCode || event.charCode;
-    if( key== 8 || key == 46 )
-    {
-      return false;
-    }
     for (i=0;i<number;i++)
     {
         // Append a node with a random text
