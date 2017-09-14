@@ -15,7 +15,8 @@
     "iron-icon": "PolymerElements/iron-icon#^2.0.0",
     "iron-icons": "PolymerElements/iron-icons#^2.0.0",
     "highcharts-chart": "^2.0.1",
-    "vaadin-split-layout": "^2.0.0"
+    "vaadin-split-layout": "^2.0.0",
+    "jquery-ui": "jqueryui#^1.12.1"
   },
   "authors": [
     "Warren Drucker <warren.drucker@garmin.com>"

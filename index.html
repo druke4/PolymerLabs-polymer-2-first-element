@@ -2,9 +2,12 @@
 <html>
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="bower_components/highcharts/highcharts.js"></script>
     <link rel="import" href="bower_components/vaadin-split-layout/vaadin-split-layout.html">
     <link rel="import" href="elements/hello-world.html">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
     <title>Power Data</title>
     <style>
       header{
@@ -48,6 +51,11 @@
               Sources:
               <input type="number" id="sources" name="Sources" value="4" max="8" min="1" onkeypress="addFields()" onkeyup="addFields()" onclick="addFields()">
               <div id="sourceContainer"></div>
+              <p>
+                <label for="timerange">Time range:</label>
+                <input type="text" id="timerange" readonly style="border:0; color:#f6931f; font-weight:bold;">
+              </p>
+              <div id="slider-range"></div>
               <input type="submit" value="Submit">
             </form>
           </div>

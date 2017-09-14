@@ -47,3 +47,16 @@ function validateFormOnSubmit(theForm)
     }
     return false;
 }
+
+$( function() {
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 288,
+    values: [ 0, 288 ],
+    slide: function( event, ui ) {
+      $( "#timerange" ).val( ui.values[ 0 ]*5 + "min - " + ui.values[ 1 ]*5 + "min" );
+    }
+  });
+  $( "#timerange" ).val("Full");
+} );
