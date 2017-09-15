@@ -71,7 +71,8 @@ function loadData(){
       setChartData(myObj);
     }
   };
-  xhttp.open("GET","power_data.json",true);
+  var url = "power_data.json" + '?_=' + new Date().getTime();
+  xhttp.open("GET",url,true);
   xhttp.send();
 }
 function setChartData(jsonObj){

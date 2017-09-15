@@ -3,15 +3,15 @@
   [
     {
       "Title":"Accelerometer",
-      "Power":15
+      "Power":20
     },
     {
       "Title":"Display",
-      "Power":5
+      "Power":15
     },
     {
       "Title":"Micro",
-      "Power":20
+      "Power":60
     },
     {
       "Title":"GPS",

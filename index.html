@@ -17,6 +17,42 @@
         clear: left;
         text-align: center;
       }
+      .ui-selectmenu-text {
+        max-width: 20px;  /*put the desired width here!*/
+      }
+      .ui-selectmenu-button{
+        max-width: 20px;
+      }
+      .ui-controlgroup-horizontal .ui-spinner-input {
+        width: 20px;
+      }
+      </style>
+      <script>
+      $( function() {
+        $( ".controlgroup" ).controlgroup()
+      } );
+      </script>
+      <script>
+      $(document).ready(function(){
+          $('.ui-spinner-button').click(function(){
+              addFields();
+          });
+      });
+      </script>
+
+      <script>
+      $( function() {
+        $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+        $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+      } );
+      </script>
+      <style>
+      .ui-tabs-vertical { width: 5em; }
+      .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+      .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+      .ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+      .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+      .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
       </style>
   </head>
   <body>
@@ -28,37 +64,48 @@
       <header> <h1>Power Chart</h1> </header>
       <button type="button" onclick="loadData()">Test Button</button>
       <vaadin-split-layout>
-        <div style="min-height: 500px;min-width:300px">first content</div>
+        <div id="tabs" class="">
+          <ul>
+            <li><a href="#tabs-1">Running GPS</a></li>
+            <li><a href="#tabs-2">Normal</a></li>
+            <li><a href="#tabs-3">Walking</a></li>
+          </ul>
+        </div>
         <vaadin-split-layout vertical>
           <div id="container"></div>
+          <div class="widget">
           <div id="form_container" style="min-width: 300px;min-height:400px">
-            <form action="#" onsubmit="return validateFormOnSubmit(this);" method="post">
-              Data Rate:
-              <select name="DataRate">
-                <option value="xxxx">1</option>
-                <option value="yyyy">2</option>
-              </select>
-              Range:
-              <select class="" name="Range">
-                <option value="xxx">1</option>
-                <option value="yyy">2</option>
-              </select>
-              Resolution:
-              <select class="" name="Resolution">
-                <option value="xxx">1</option>
-                <option value="yyy">2</option>
-              </select>
-              Sources:
-              <input type="number" id="sources" name="Sources" value="4" max="8" min="1" onkeypress="addFields()" onkeyup="addFields()" onclick="addFields()">
-              <div id="sourceContainer"></div>
-              <p>
-                <label for="timerange">Time range:</label>
-                <input type="text" id="timerange" readonly style="border:0; color:#f6931f; font-weight:bold;">
-              </p>
-              <div id="slider-range"></div>
-              <input type="submit" value="Submit">
-            </form>
-          </div>
+            <fieldset>
+              <legend>Configuration</legend>
+              <div class="controlgroup">
+                <label for="DataRate" class="ui-controlgroup-label">Data Rate</label>
+                <select id="DataRate" name="DataRate">
+                  <option value="xxxx">1</option>
+                  <option value="yyyy">2</option>
+                </select>
+                <label for="Range" class="ui-controlgroup-label">Range</label>
+                <select class="" id="Range" name="Range">
+                  <option value="xxx">1</option>
+                  <option value="yyy">2</option>
+                </select>
+                <label for="Resolution" class="ui-controlgroup-label">Resolution</label>
+                <select class="" id="Resolution" name="Resolution">
+                  <option value="xxx">1</option>
+                  <option value="yyy">2</option>
+                </select>
+                <label for="sources" class="ui-controlgroup-label">Sources</label>
+                <input id="sources" name="numSources" class="ui-spinner-input" onkeypress="addFields()" onkeyup="addFields()" onclick="addFields()">
+                <div id="sourceContainer"></div>
+                <p>
+                  <label for="timerange" class="ui-controlgroup-label">Time range:</label>
+                  <input type="text" id="timerange" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </p>
+                <div id="slider-range"></div>
+                <button>Save</button>
+              </div><!--control group -->
+            </fieldset>
+          </div><!--widget -->
+          </div><!-- Container -->
         </vaadin-split-layout>
       </vaadin-split-layout>
   </body>
